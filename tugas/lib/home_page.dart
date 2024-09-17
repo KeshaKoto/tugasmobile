@@ -15,7 +15,6 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController num1Controller = TextEditingController();
   final TextEditingController num2Controller = TextEditingController();
   final TextEditingController numberController = TextEditingController();
-  
 
   bool isLoggedIn = false;
   String welcomeMessage = '';
@@ -27,7 +26,8 @@ class _HomePageState extends State<HomePage> {
   ];
 
   void login() {
-    if (usernameController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+    if (usernameController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty) {
       setState(() {
         isLoggedIn = true;
         welcomeMessage = 'Selamat datang, ${usernameController.text}!';
@@ -61,21 +61,30 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(welcomeMessage, style: TextStyle(color: Colors.blueGrey[900], fontSize: 24, fontWeight: FontWeight.bold)),
+          Text(welcomeMessage,
+              style: TextStyle(
+                  color: Colors.blueGrey[900],
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold)),
           SizedBox(height: 10),
-          Text('Menu Utama', style: TextStyle(color: Colors.blueGrey[900], fontSize: 24, fontWeight: FontWeight.bold)),
+          Text('Menu Utama',
+              style: TextStyle(
+                  color: Colors.blueGrey[900],
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold)),
           SizedBox(height: 40),
           ElevatedButton(
-  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-    builder: (context) => DataKelompokPage(dataKelompok: dataKelompok),
-  )),
-  child: Text('Data Kelompok'),
-  style: ElevatedButton.styleFrom(
-    minimumSize: Size(double.infinity, 40),
-    backgroundColor: Colors.blueGrey[900],
-    foregroundColor: Colors.white,
-  ),
-),
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) =>
+                  DataKelompokPage(dataKelompok: dataKelompok),
+            )),
+            child: Text('Data Kelompok'),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(double.infinity, 40),
+              backgroundColor: Colors.blueGrey[900],
+              foregroundColor: Colors.white,
+            ),
+          ),
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: () => Navigator.of(context).push(MaterialPageRoute(

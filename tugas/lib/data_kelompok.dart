@@ -12,7 +12,8 @@ class DataKelompokPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Data Kelompok')),
       backgroundColor: Colors.grey[300],
-      body: Center(  // Membungkus dengan Center untuk meratakan konten
+      body: Center(
+        // Membungkus dengan Center untuk meratakan konten
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -39,11 +40,19 @@ class DataKelompokPage extends StatelessWidget {
                   child: DataTable(
                     columns: [
                       DataColumn(
-                         label: Center(child: Text('NIM', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        label: Center(
+                          child: Text('NIM',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       DataColumn(
-                        label: Center(child: Text('Nama', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        label: Center(
+                          child: Text('Nama',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ],
@@ -54,13 +63,15 @@ class DataKelompokPage extends StatelessWidget {
                                 DataCell(
                                   Align(
                                     alignment: Alignment.centerLeft,
-                                    child: Text(item['NIM']!, style: TextStyle(color: Colors.black)),
+                                    child: Text(item['NIM']!,
+                                        style: TextStyle(color: Colors.black)),
                                   ),
                                 ),
                                 DataCell(
                                   Align(
                                     alignment: Alignment.centerLeft,
-                                    child: Text(item['Nama']!, style: TextStyle(color: Colors.black)),
+                                    child: Text(item['Nama']!,
+                                        style: TextStyle(color: Colors.black)),
                                   ),
                                 ),
                               ],
